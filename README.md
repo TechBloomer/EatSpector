@@ -5,7 +5,6 @@
 
 Check out the API data endpoints here >> https://data.cityofnewyork.us/resource/9w7m-hzhe.json 
 
-Time spent: **11** hours spent in total
 
 ## User Stories
 
@@ -13,20 +12,20 @@ The following **required** functionality is completed:
 
 - [x] User can sign up to create a new account using Parse authentication
 - [x] User can log in and log out of his or her account
-- [ ] The current signed in user is persisted across app restarts
+- [x] The current signed in user is persisted across app restarts
 - [x] User can search for a restaurant 
-- [ ] User can use current location to see restaurants around the area
+- [x] User can use current location to see restaurants around the area
 - [x] User can see the grading letter and violation description for each restaurant
 - [x] User can tap a restaurant and see its detail view
-- [ ] User can place an order online using GrubHub
-- [ ] User can view restaurant location on google map
-- [ ] User can get directions using google map
+- [x] User can place an order online using Yelp
+- [x] User can view restaurant location on google map
+- [x] User can get directions using google map
 
 
 ## Search Bar Functionality
- - [ ] User can search restaurants nearby 3-5 miles parameters.
- - x ] User can add filters on what sort of restaurant they are looking for. (For example, Thai or Chinese).
- - [ ] User can get all locations of specific restaurants through map.
+ - [x] User can search restaurants nearby 3-5 miles parameters.
+ - [x] User can add filters on what sort of restaurant they are looking for. (For example, Thai or Chinese).
+ - [x] User can get all locations of specific restaurants through map.
 
 ## Screen Walkthrough
 
