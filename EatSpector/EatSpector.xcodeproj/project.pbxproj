@@ -23,11 +23,11 @@
 		08E3DC24218922F2004F7CB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08E3DC23218922F2004F7CB3 /* GoogleService-Info.plist */; };
 		08F261B221A720C400F74E89 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F261B121A720C400F74E89 /* MainViewController.swift */; };
 		08F261B421A723F200F74E89 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F261B321A723F200F74E89 /* MainCell.swift */; };
+		08F6D9FA22507DB90079ADD2 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08F6D9F922507DB90079ADD2 /* Home.storyboard */; };
 		2B7CAD1D687B99C9EB73DB59 /* Pods_EatSpectorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6802A06441007532F4C3458 /* Pods_EatSpectorTests.framework */; };
 		863CF73121B34A0F00D98B6A /* SuggestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863CF73021B34A0F00D98B6A /* SuggestViewController.swift */; };
 		867F6A7A21950C140092533F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 867F6A7921950C140092533F /* Main.storyboard */; };
 		86C3EB7221B47C8900D71AA0 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3EB7121B47C8900D71AA0 /* AccountTableViewController.swift */; };
-		86F05DCE21B74D6700DF1D17 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F05DCD21B74D6700DF1D17 /* Home.storyboard */; };
 		A95C8C53573430327F2165C9 /* Pods_EatSpectorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B374A3318F0FFEB7C08CE58A /* Pods_EatSpectorUITests.framework */; };
 		DFFC856E49CCD9793408B7A2 /* Pods_EatSpector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4093E8A3101AA29D4E76591 /* Pods_EatSpector.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +72,7 @@
 		08E3DC23218922F2004F7CB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		08F261B121A720C400F74E89 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		08F261B321A723F200F74E89 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		08F6D9F922507DB90079ADD2 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = ../../../../../../Downloads/EatSpector/EatSpector/EatSpector/Home.storyboard; sourceTree = "<group>"; };
 		3D6C1A7ADBF3DBB2C0C0E706 /* Pods-EatSpectorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatSpectorUITests.debug.xcconfig"; path = "Target Support Files/Pods-EatSpectorUITests/Pods-EatSpectorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		56C0EB14FBC4C8F4094A47FA /* Pods-EatSpectorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatSpectorTests.release.xcconfig"; path = "Target Support Files/Pods-EatSpectorTests/Pods-EatSpectorTests.release.xcconfig"; sourceTree = "<group>"; };
 		5CB26B77CE759787639608CC /* Pods-EatSpector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatSpector.release.xcconfig"; path = "Target Support Files/Pods-EatSpector/Pods-EatSpector.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,7 +80,6 @@
 		863CF73021B34A0F00D98B6A /* SuggestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestViewController.swift; sourceTree = "<group>"; };
 		867F6A7921950C140092533F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		86C3EB7121B47C8900D71AA0 /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
-		86F05DCD21B74D6700DF1D17 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = ../../../../Downloads/Home.storyboard; sourceTree = "<group>"; };
 		ADE0D99FDEE7C12DEE9CD778 /* Pods-EatSpectorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatSpectorTests.debug.xcconfig"; path = "Target Support Files/Pods-EatSpectorTests/Pods-EatSpectorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B26D8F5BFFCF886DC0FEDEC3 /* Pods-EatSpector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatSpector.debug.xcconfig"; path = "Target Support Files/Pods-EatSpector/Pods-EatSpector.debug.xcconfig"; sourceTree = "<group>"; };
 		B374A3318F0FFEB7C08CE58A /* Pods_EatSpectorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatSpectorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,8 +146,8 @@
 				08BB8421217702D200EC8FEB /* ViewControllers */,
 				0825E9A92164673000994015 /* AppDelegate.swift */,
 				08E3DC23218922F2004F7CB3 /* GoogleService-Info.plist */,
+				08F6D9F922507DB90079ADD2 /* Home.storyboard */,
 				867F6A7921950C140092533F /* Main.storyboard */,
-				86F05DCD21B74D6700DF1D17 /* Home.storyboard */,
 				0825E9B02164673100994015 /* Assets.xcassets */,
 				0825E9B22164673100994015 /* LaunchScreen.storyboard */,
 				0825E9B52164673100994015 /* Info.plist */,
@@ -346,7 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0825E9B42164673100994015 /* LaunchScreen.storyboard in Resources */,
-				86F05DCE21B74D6700DF1D17 /* Home.storyboard in Resources */,
+				08F6D9FA22507DB90079ADD2 /* Home.storyboard in Resources */,
 				08E3DC24218922F2004F7CB3 /* GoogleService-Info.plist in Resources */,
 				0825E9B12164673100994015 /* Assets.xcassets in Resources */,
 				867F6A7A21950C140092533F /* Main.storyboard in Resources */,
