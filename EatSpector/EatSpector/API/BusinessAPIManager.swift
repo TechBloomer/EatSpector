@@ -20,7 +20,8 @@ class BusinessAPIManager {
     
     // WILL LIMIT AMOUNT OF TOTAL REQUEST MADE TO 50.
     func getBusinesses(completion: @escaping ([Business]?, Error?) -> ()) {
-        let url = URL(string: (BusinessAPIManager.baseUrl)+"?$where=grade%20in('A')&$limit=50")!
+       // let url = URL(string: (BusinessAPIManager.baseUrl)+"?$where=grade%20in('C')&$limit=50")!
+        let url = URL(string: (BusinessAPIManager.baseUrl)+"?$limit=50")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let task = session.dataTask(with: request) { (data, response, error) in
             // This will run when the network request returns

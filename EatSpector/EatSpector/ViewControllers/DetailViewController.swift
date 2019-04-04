@@ -34,7 +34,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         if let business = business {
             businessNameLabel.text = business.name
             gradingLabel.text = "Grade : " + business.grading
-            record_dateLabel.text = business.record_date
+            record_dateLabel.text = business.record_date as String
             addressLabel.text = formatAddress(strBuilding: business.building_number, strStreet: business.street, strBoro: business.boro, strZip: business.zipcode)
             phoneLabel.text = "Tel: " + arrangeUSFormat(strPhone: business.phone)
             scoreLabel.text = "Score : " + business.score
