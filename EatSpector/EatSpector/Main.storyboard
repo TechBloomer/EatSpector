@@ -277,35 +277,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grade_icon" translatesAutoresizingMaskIntoConstraints="NO" id="VCF-Bi-SbR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="database" translatesAutoresizingMaskIntoConstraints="NO" id="VCF-Bi-SbR">
                                 <rect key="frame" x="13" y="522" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="G06-m2-A78"/>
                                     <constraint firstAttribute="width" constant="25" id="huD-vi-Smu"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="record_date_icon" translatesAutoresizingMaskIntoConstraints="NO" id="nyy-QL-AVC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create_new" translatesAutoresizingMaskIntoConstraints="NO" id="nyy-QL-AVC">
                                 <rect key="frame" x="13" y="585" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="jc8-xm-8J9"/>
                                     <constraint firstAttribute="height" constant="25" id="m3M-5W-C87"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="score_icon_2" translatesAutoresizingMaskIntoConstraints="NO" id="J4g-7C-F66">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trophy" translatesAutoresizingMaskIntoConstraints="NO" id="J4g-7C-F66">
                                 <rect key="frame" x="13" y="555" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="sgy-PG-EKT"/>
                                     <constraint firstAttribute="height" constant="25" id="wUV-6K-t7e"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="violation_code_icon" translatesAutoresizingMaskIntoConstraints="NO" id="EiA-RL-gC4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about" translatesAutoresizingMaskIntoConstraints="NO" id="EiA-RL-gC4">
                                 <rect key="frame" x="13" y="618" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="75U-IQ-Ghc"/>
                                     <constraint firstAttribute="width" constant="25" id="ECf-V9-2Hc"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="violation_desc_icon" translatesAutoresizingMaskIntoConstraints="NO" id="WVt-ZM-teC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="copy" translatesAutoresizingMaskIntoConstraints="NO" id="WVt-ZM-teC">
                                 <rect key="frame" x="13" y="651" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="RPK-6U-MW8"/>
@@ -675,20 +675,20 @@
         </scene>
     </scenes>
     <resources>
+        <image name="about" width="30" height="30"/>
         <image name="business_pic" width="1000" height="667"/>
+        <image name="copy" width="30" height="30"/>
+        <image name="create_new" width="30" height="30"/>
+        <image name="database" width="30" height="30"/>
         <image name="email_icon" width="240" height="240"/>
         <image name="get_direction" width="288" height="288"/>
-        <image name="grade_icon" width="512" height="512"/>
         <image name="icon" width="120" height="120"/>
         <image name="lyft" width="571" height="574"/>
         <image name="paper" width="240" height="240"/>
         <image name="passcode_icon2" width="240" height="240"/>
-        <image name="record_date_icon" width="512" height="512"/>
-        <image name="score_icon_2" width="512" height="512"/>
         <image name="signinout_button" width="240" height="240"/>
+        <image name="trophy" width="30" height="30"/>
         <image name="user_icon" width="60" height="60"/>
-        <image name="violation_code_icon" width="128" height="128"/>
-        <image name="violation_desc_icon" width="430" height="500"/>
         <image name="yelp_icon" width="363" height="436"/>
     </resources>
 </document>
