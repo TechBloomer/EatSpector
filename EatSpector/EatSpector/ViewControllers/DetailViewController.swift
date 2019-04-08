@@ -45,14 +45,20 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    //code to format address
+    
+    
+    /*:
+     # Format adress reterived from API
+     */
     func formatAddress(strBuilding : String, strStreet : String, strBoro : String, strZip : String)-> String{
         let strUpdated = strBuilding + " " + strStreet + ", " + strBoro + ", NY " + strZip
         return strUpdated
     }
     
     
-    //code to format phone number
+    /*:
+     # Format phone number reterive from API
+     */
     func arrangeUSFormat(strPhone : String)-> String {
         var strUpdated = strPhone
         if strPhone.characters.count == 10 {
@@ -64,7 +70,10 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         return strUpdated
     }
     
-    //code to go to google map for direction
+    
+    /*:
+     # Open Google Map for Direction
+     */
     @IBAction func getDirectionButton(_ sender: Any) {
         if let business = business {
             let street = business.street
@@ -79,7 +88,10 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         print("google presses")
     }
     
-    //code to go to Yelp for menu
+    
+    /*:
+     # Open Yelp for menu and order
+     */
     @IBAction func onClick_GrubHubButton(_ sender: Any) {
         if let business = business {
             let name = business.name
@@ -99,7 +111,10 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         print("Yelp button pressed.")
     }
     
-    //code to order a ride using Uber
+    
+    /*:
+     # Order a ride using LYFT
+     */
     @IBAction func onClicked_Uber(_ sender: Any) {
         if let business = business {
             let street = business.street
@@ -107,15 +122,15 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
             let address = business.building_number + "+" + trimedStreet + "+" + business.boro + "+" + business.zipcode
             let baseURLString = "uber://"
             
-           /* if let url = URL(string:  "waze://" ) {
-                UIApplication.shared.open(url, options: [:])
-            }*/
+            /* if let url = URL(string:  "waze://" ) {
+             UIApplication.shared.open(url, options: [:])
+             }*/
             
             if UIApplication.shared.canOpenURL(URL(string: "lyft://")!) {
                 // Uber is installed. Launch Uber and start navigation
                 let urlStr = String(format: "lyft://")
                 UIApplication.shared.open(URL(string: urlStr)!)
-
+                
                 //UIApplication.shared.openURL(URL(string: urlStr)!)
             } else {
                 // if Lyft is not installed
@@ -124,6 +139,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         }
         print("Uber button pressed.")
     }
+    
     /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      
      let trailerViewController = segue.destination as! SeamLessViewController

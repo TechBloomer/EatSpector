@@ -18,7 +18,6 @@ class Business {
     var zipcode: String
     var address: String = ""
     var record_date: String
-    
     var critical_flag: String
     var inspection_date: String
     var inspection_type: String
@@ -27,6 +26,11 @@ class Business {
     var violation_code: String
     var violation_Description: String
     
+    
+    
+    /*:
+     # Initiate a dictionary
+     */
     init(dictionary: [String:Any]){
         name = dictionary["dba"] as? String ?? "no name"
         categories = dictionary["cuisine_description"] as? String ?? "no category"
@@ -43,14 +47,13 @@ class Business {
         score  = dictionary["score"] as? String ?? "data not available"
         violation_code  = dictionary["violation_code"] as? String ?? "data not available"
         violation_Description  = dictionary["violation_description"] as? String ?? "data not available"
-
-        /*address += (dictionary["street"] as! String) + (",") + (dictionary["boro"] as! String)+(",")+(dictionary["zipcode"] as! String);
-        if address == ",,"
-            {
-                address = "Address not avaliable"                
-            }*/
     }
     
+    
+    
+    /*:
+     # Create a collection of dictionaries with business data
+     */
     class func businesses(dictionaries: [[String: Any]]) -> [Business]{
         var businesses: [Business] = []
         for dictionary in dictionaries {

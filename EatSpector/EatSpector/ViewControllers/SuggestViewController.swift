@@ -13,26 +13,21 @@ import FirebaseAuth
 class SuggestViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
-
-    
-    var handle: AuthStateDidChangeListenerHandle?
-
-    open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
-    }
-    
     @IBOutlet weak var ImageView: ImageSlideshow!
+
+    var handle: AuthStateDidChangeListenerHandle?
     
     let localSource = [ImageSource(imageString: "hd-201401-r-sausage-and-broccoli-rabe-with-polenta")!, ImageSource(imageString: "beef-noodle-soup-8")!, ImageSource(imageString: "1371606132101")!, ImageSource(imageString: "182_3_9296_jpeg_ad23f8cb-854b-41ea-85b6-e1afd54da69a")!]
- //   let afNetworkingSource = [AFURLSource(urlString: "https://images.unsplash.com/photo-1432679963831-2dab49187847?w=1080")!, AFURLSource(urlString: "https://images.unsplash.com/photo-1447746249824-4be4e1b76d66?w=1080")!, AFURLSource(urlString: "https://images.unsplash.com/photo-1463595373836-6e0b0a8ee322?w=1080")!]
-//    let alamofireSource = [AlamofireSource(urlString: "https://images.unsplash.com/photo-1432679963831-2dab49187847?w=1080")!, AlamofireSource(urlString: "https://images.unsplash.com/photo-1447746249824-4be4e1b76d66?w=1080")!, AlamofireSource(urlString: "https://images.unsplash.com/photo-1463595373836-6e0b0a8ee322?w=1080")!]
-//    let sdWebImageSource = [SDWebImageSource(urlString: "https://images.unsplash.com/photo-1432679963831-2dab49187847?w=1080")!, SDWebImageSource(urlString: "https://images.unsplash.com/photo-1447746249824-4be4e1b76d66?w=1080")!, SDWebImageSource(urlString: "https://images.unsplash.com/photo-1463595373836-6e0b0a8ee322?w=1080")!]
-//    let kingfisherSource = [KingfisherSource(urlString: "https://images.unsplash.com/photo-1432679963831-2dab49187847?w=1080")!, KingfisherSource(urlString: "https://images.unsplash.com/photo-1447746249824-4be4e1b76d66?w=1080")!, KingfisherSource(urlString: "https://images.unsplash.com/photo-1463595373836-6e0b0a8ee322?w=1080")!]
+    
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        // Set slide show interval time 5 seconds
         ImageView.slideshowInterval = 5.0
+        
+        // Set page controller postion
         ImageView.pageIndicatorPosition = .init(horizontal: .center, vertical: .under)
         ImageView.contentScaleMode = UIView.ContentMode.scaleAspectFill
         
@@ -41,7 +36,7 @@ class SuggestViewController: UIViewController {
         pageControl.pageIndicatorTintColor = UIColor.black
         ImageView.pageIndicator = pageControl
         
-        // optional way to show activity indicator during image load (skipping the line will show no activity indicator)
+        // Optional way to show activity indicator during image load (skipping the line will show no activity indicator)
         ImageView.activityIndicator = DefaultActivityIndicator()
         ImageView.currentPageChanged = { page in
             print("current page:", page)
@@ -52,20 +47,31 @@ class SuggestViewController: UIViewController {
         
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(SuggestViewController.didTap))
         ImageView.addGestureRecognizer(recognizer)
-        // Do any additional setup after loading the view.
     }
-
     
     
-    //fullscreen images
+    /*:
+     # Set UIInterface orientation mask to portrait
+     */
+    open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
+    
+    /*:
+     # Present fullscreen image on tap
+     */
     @objc func didTap() {
         let fullScreenController = ImageView.presentFullScreenController(from: self)
         // set the activity indicator for full screen controller (skipping the line will show no activity indicator)
         fullScreenController.slideshow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
     }
 
+    /*:
+     # Log out current user
+     */
+
     @IBAction func OnLogout(_ sender: Any) {
-        
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
@@ -77,15 +83,5 @@ class SuggestViewController: UIViewController {
         self.present(newViewController, animated: true, completion: nil)
 
     }
-  
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

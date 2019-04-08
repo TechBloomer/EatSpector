@@ -22,6 +22,10 @@ class BusinessCell: UITableViewCell {
         super.awakeFromNib()
     }
     
+    
+    /*:
+     # Set table cell's attributes for each business
+     */
     var business: Business!{
         willSet(business){
             self.businessNameLabel.text = business.name
@@ -37,10 +41,12 @@ class BusinessCell: UITableViewCell {
         }
     }
     
+    
+    /*:
+     # Configure the view for selected state
+     */
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
 
 }

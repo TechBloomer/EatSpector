@@ -11,6 +11,7 @@ import Firebase;
 
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     static let googleMapsApiKey = "AIzaSyBV2akct5tPf2nQ4mfzEpHj47SvMSMMlro"
@@ -18,17 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var ref: DatabaseReference!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-//        UINavigationBar.appearance().barTintColor = UIColor(red: 255, green: 0/255, blue: 0/255, alpha: 1)
-//        UINavigationBar.appearance().tintColor = UIColor.white
-//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
-//        
         FirebaseApp.configure();
-        
-        
+        // Check if there is a user logged in
         ref = Database.database().reference()
-        // check if user is logged
         return true
     }
 

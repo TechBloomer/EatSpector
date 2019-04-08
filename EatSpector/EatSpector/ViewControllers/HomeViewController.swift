@@ -13,14 +13,13 @@ import CoreLocation
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate{
     
-    let locationManager: CLLocationManager = CLLocationManager();
-    
     @IBOutlet weak var tableView: UITableView!
     var businesses: [Business] = []
-    let cellSpacingHeight: CGFloat = 20
-    
-    var searchInput: [Business] = [];
     var searching = false;
+    var searchInput: [Business] = [];
+    let cellSpacingHeight: CGFloat = 20
+    let locationManager: CLLocationManager = CLLocationManager();
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +35,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         locationManager.distanceFilter = 100;
         //locationManager.stopUpdatingLocation()
         
-        
         tableView.dataSource = self
         fetchBusinesses()
         
-        //        setupNavBar();
+        //setupNavBar();
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -50,7 +48,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
-    //set up navigation bar
+    
+    /*:
+     # Set up navigation bar
+     */
     func setupNavBar(){
         navigationController?.navigationBar.prefersLargeTitles = true;
         let searchController = UISearchController(searchResultsController: nil);
@@ -59,7 +60,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         navigationItem.hidesSearchBarWhenScrolling = false;
     }
     
-    //count business
+    
+    /*:
+     # Count business
+     */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searching{
             print(searchInput.count )
@@ -72,6 +76,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
+    
+    /*:
+     # Get cell indexPath.row
+     */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BusinessCell", for: indexPath) as! BusinessCell
         //code to change color of selected cell background
@@ -99,7 +107,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-    //fetch businesses
+    
+    /*:
+     # Fetch business
+     */
     func fetchBusinesses () {
         BusinessAPIManager().getBusinesses { (businesses: [Business]?, error: Error?) in
             if let businesses = businesses {
@@ -111,7 +122,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
-    //custom navigation bar
+    
+    /*:
+     # Custom navigation bar
+     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 255, green: 0/255, blue: 0/255, alpha: 1)
@@ -119,7 +133,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
-    //search bar function
+    
+    /*:
+     # Search bar function
+     */
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchInput = businesses.filter({ (Business) -> Bool in
             guard searchBar.text != nil else { return false;}
@@ -129,7 +146,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.reloadData();
     }
     
-    //search bar cancel function
+    
+    /*:
+     # Search bar cancel function
+     */
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searching = false;
         searchInput = []
@@ -138,7 +158,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
-    //code to connect with detailViewController
+    
+    
+    /*:
+     # Connect with detailViewController
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as! UITableViewCell
         if let indexPath = tableView.indexPath(for: cell){
@@ -148,7 +172,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
-    //logout function
+    
+    
+    /*:
+     # Log out function
+     */
     @IBAction func OnLogout(_ sender: Any) {
         
         let firebaseAuth = Auth.auth()
@@ -157,6 +185,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
+        
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "Main") as! SignInViewController
         self.present(newViewController, animated: true, completion: nil)

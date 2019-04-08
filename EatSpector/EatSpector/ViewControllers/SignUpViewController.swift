@@ -11,25 +11,17 @@ import Firebase;
 import FirebaseAuth;
 
 class SignUpViewController: UIViewController, UINavigationControllerDelegate {
-
-    
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var usernameTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
-    
     @IBOutlet weak var repeatPasswordTextField: UITextField!
-    
     @IBOutlet weak var onCreateAccountButton: UIButton!
-    
     @IBOutlet weak var cancelButton: UIButton!
-    
-    var keyboard = CGRect()
-    
     @IBOutlet weak var scrollView: UIScrollView!
     
     var scrollViewHeight: CGFloat = 0
+    var keyboard = CGRect()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +36,10 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate {
         
     }
     
-    //custom navigation bar
+    
+    /*:
+     # Custom navigation bar
+     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 255, green: 0/255, blue: 0/255, alpha: 1)
@@ -52,7 +47,10 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate {
         self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
-    //show the keyboard
+    
+    /*:
+     # Show Keyboard
+     */
     @objc func showKeyboard(notification: NSNotification){
         keyboard = ((notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue)!
         UIView.animate(withDuration: 0.4) {
@@ -60,13 +58,20 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate {
         }
     }
     
-    //hide the keyboard
+    
+    /*:
+     # Hide Keyboard
+     */
     @objc func hideKeyboard(notification: NSNotification){
         UIView.animate(withDuration: 0.4) {
             self.scrollView.frame.size.height = self.view.frame.height
         }
     }
     
+    
+    /*:
+     # Create new account
+     */
     @IBAction func onCreateAccountButton(_ sender: Any) {
         print("Press created account button");
         guard let username = usernameTextField.text else {return}
@@ -99,11 +104,16 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     
-    //dismiss the current viewController when click on cancel button
+    /*:
+     # Dismiss current viewController when click on cancel button
+     */
     @IBAction func cancelButton_Clicked(_ sender: Any) {self.view.window!.rootViewController?.presentedViewController?.dismiss(animated: true, completion: nil)
     }
     
-    //dismiss keyboard on tap
+    
+    /*:
+     # Dismiss keyboard on tap
+     */
     @IBAction func onTapDismissKeyboard(_ sender: Any) {
         view.endEditing(true)
     }
